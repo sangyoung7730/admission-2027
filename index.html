@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2027학년도 대학 입시설명회 대시보드</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.header{background:linear-gradient(135deg,#1e293b 0%,#0c1222 100%);padding:20px 28px;border-bottom:1px solid #334155}
+.header h1{font-size:22px;color:#f8fafc;font-weight:800;margin-bottom:4px}
+.header p{font-size:12px;color:#94a3b8;line-height:1.5}
+.header .meta{font-size:11px;color:#64748b;margin-top:6px}
+.wrap{max-width:1400px;margin:0 auto;padding:16px 20px}
+
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+.sc{background:#1e293b;border:1px solid #334155;border-radius:8px;padding:14px;text-align:center}
+.sc .n{font-size:24px;font-weight:800;color:#fbbf24}
+.sc .l{font-size:11px;color:#94a3b8;margin-top:3px}
+.sc.urgent .n{color:#f87171}
+.sc.soon .n{color:#fb923c}
+.sc.tbd .n{color:#94a3b8}
+.sc.high .n{color:#22c55e}
+
+.filters{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:14px;margin-bottom:16px}
+.filters .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.filters .row:last-child{margin-bottom:0}
+.filters label{font-size:12px;color:#94a3b8;font-weight:600;margin-right:4px}
+.filters select,.filters input{padding:6px 10px;background:#0f172a;color:#e2e8f0;border:1px solid #334155;border-radius:6px;font-size:12px;font-family:inherit}
+.filters select:focus,.filters input:focus{outline:none;border-color:#3b82f6}
+.filters input[type=text]{min-width:200px}
+.filters .btn{padding:6px 14px;background:#475569;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer}
+.filters .btn:hover{background:#64748b}
+.filters .btn.active{background:#3b82f6}
+.filters .chip{display:inline-block;padding:4px 10px;background:#0f172a;border:1px solid #334155;border-radius:14px;font-size:11px;color:#94a3b8;cursor:pointer;user-select:none}
+.filters .chip.active{background:#3b82f6;color:#fff;border-color:#3b82f6}
+.filters .chip:hover{border-color:#3b82f6}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:16px;position:relative;border-left:4px solid #334155;transition:.2s}
+.card:hover{border-color:#3b82f6;transform:translateY(-2px)}
+.card.urgent{border-left-color:#ef4444;background:linear-gradient(135deg,#1e293b 0%,#2d1215 100%)}
+.card.soon{border-left-color:#fb923c}
+.card.normal{border-left-color:#3b82f6}
+.card.tbd{border-left-color:#64748b;opacity:.85}
+.card.past{border-left-color:#475569;opacity:.55}
+
+.card .dday{position:absolute;top:14px;right:14px;font-size:11px;font-weight:800;padding:4px 10px;border-radius:14px;background:#0f172a;color:#fbbf24;border:1px solid #334155}
+.card.urgent .dday{background:#ef4444;color:#fff;border-color:#ef4444}
+.card.soon .dday{background:#fb923c;color:#fff;border-color:#fb923c}
+.card.tbd .dday{color:#94a3b8}
+.card.past .dday{color:#64748b}
+
+.card .univ{font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.card .ev-name{font-size:15px;color:#f8fafc;font-weight:700;margin-bottom:8px;padding-right:60px;line-height:1.35}
+.card .date{font-size:13px;color:#fbbf24;font-weight:600;margin-bottom:8px}
+.card .meta{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12px;color:#cbd5e1;line-height:1.55;margin-bottom:8px}
+.card .meta .k{color:#64748b;font-weight:600;white-space:nowrap}
+.card .tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.card .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+.tag-tier{background:#1e3a8a40;color:#93c5fd}
+.tag-format{background:#16653440;color:#86efac}
+.tag-reg{background:#a16207a0;color:#fff}
+.tag-noreg{background:#16a34aa0;color:#fff}
+.tag-tbd{background:#47556940;color:#94a3b8}
+.tag-pri-high{background:#dc2626;color:#fff}
+.tag-pri-medium{background:#f59e0b;color:#000}
+.tag-pri-low{background:#64748b;color:#fff}
+
+.card .notes{font-size:11px;color:#94a3b8;background:#0f172a;border-radius:6px;padding:8px 10px;margin-top:8px;line-height:1.5}
+.card .links{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.card .links a{font-size:11px;color:#60a5fa;text-decoration:none;background:#0f172a;padding:5px 10px;border-radius:5px;border:1px solid #334155;transition:.15s}
+.card .links a:hover{background:#1e3a8a40;border-color:#3b82f6}
+
+.empty{text-align:center;padding:60px 20px;color:#64748b;font-size:14px}
+
+.footer{margin-top:30px;padding:18px;text-align:center;font-size:11px;color:#64748b}
+.footer a{color:#3b82f6;text-decoration:none}
+
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr}
+  .filters .row{flex-direction:column;align-items:stretch}
+  .filters input[type=text]{min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎓 2027학년도 대학 입시설명회 대시보드</h1>
+  <p>두레생협 가이의 따님 입시 준비용 | 수도권 인서울/중하위권 + 거점국립대 + 지방 사립 | 문과 우선</p>
+  <p class="meta">수집일: 2026-05-21 · 화면 우측 D-Day 기준 자동 정렬 · 사전접수 필요 행사는 마감일 임박 시 빨강 표시</p>
+</div>
+
+<div class="wrap">
+
+<div class="summary" id="summary"></div>
+
+<div class="filters">
+  <div class="row">
+    <label>대학 그룹</label>
+    <div id="tierChips"></div>
+  </div>
+  <div class="row">
+    <label>형식</label>
+    <select id="filterFormat">
+      <option value="">전체</option>
+      <option value="오프라인">오프라인</option>
+      <option value="온라인">온라인</option>
+      <option value="하이브리드">하이브리드</option>
+    </select>
+    <label>긴급도</label>
+    <select id="filterUrgency">
+      <option value="">전체</option>
+      <option value="urgent">⚠ 임박 (D-7 이내)</option>
+      <option value="soon">⏰ 가까움 (D-30 이내)</option>
+      <option value="normal">정상</option>
+      <option value="tbd">📅 일정 미정 (TBD)</option>
+      <option value="past">종료된 행사</option>
+    </select>
+    <label>우선도</label>
+    <select id="filterPriority">
+      <option value="">전체</option>
+      <option value="high">필수</option>
+      <option value="medium">권장</option>
+      <option value="low">선택</option>
+    </select>
+    <label>대상</label>
+    <select id="filterAudience">
+      <option value="">전체</option>
+      <option value="학부모">학부모 대상</option>
+      <option value="수험생">수험생 대상</option>
+      <option value="교사">교사 대상</option>
+    </select>
+  </div>
+  <div class="row">
+    <label>검색</label>
+    <input type="text" id="filterSearch" placeholder="대학명, 행사명, 장소, 키워드...">
+    <button class="btn" id="hidePast">종료된 행사 숨기기</button>
+    <button class="btn" id="resetBtn">필터 초기화</button>
+    <button class="btn" id="exportCsv">CSV 다운로드</button>
+  </div>
+</div>
+
+<div class="cards" id="cards"></div>
+<div class="empty" id="emptyMsg" style="display:none">조건에 맞는 행사가 없습니다.</div>
+
+<div class="footer">
+  본 자료는 각 대학 입학처 및 대입정보포털(adiga.kr), 베리타스알파 등 공개된 정보를 종합한 것입니다. TBD 항목은 작년 패턴 기준 시기 추정이며 확정되면 갱신됩니다. 가장 정확한 일정은 각 <a href="https://www.adiga.kr/" target="_blank">대입정보포털</a>과 대학 입학처 사이트를 통해 재확인하세요.
+</div>
+
+</div>
+
+<script src="events.js"></script>
+<script>
+const TODAY = new Date('2026-05-21'); // 데이터 수집 기준일. 실제 사용 시 new Date() 로 변경 가능
+TODAY.setHours(0,0,0,0);
+
+let EVENTS = [];
+let HIDE_PAST = false;
+let TIER_FILTER = '';
+
+function loadData(){
+  if(!window.EVENTS_DATA){
+    document.getElementById('cards').innerHTML = '<div class="empty">events.js 를 불러오지 못했습니다. 같은 폴더에 events.js 가 있는지 확인하세요.</div>';
+    return;
+  }
+  EVENTS = window.EVENTS_DATA.events.map(e => normalize(e));
+  init();
+}
+
+function normalize(e){
+  const dt = parseDate(e.date);
+  let dday = null, status = 'tbd';
+  if(dt){
+    const ms = dt.getTime() - TODAY.getTime();
+    dday = Math.round(ms / 86400000);
+    if(dday < 0){
+      // 종료 날짜 있으면 그것까지 진행 중
+      const endDt = parseDate(e.date_end);
+      if(endDt && endDt.getTime() >= TODAY.getTime()){
+        dday = 0;
+        status = 'urgent';
+      } else {
+        status = 'past';
+      }
+    } else if(dday <= 7) status = 'urgent';
+    else if(dday <= 30) status = 'soon';
+    else status = 'normal';
+  }
+  return Object.assign({}, e, {_dt: dt, _dday: dday, _status: status});
+}
+
+function parseDate(s){
+  if(!s || s==='TBD' || s==='') return null;
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if(!m) return null;
+  return new Date(+m[1], +m[2]-1, +m[3]);
+}
+
+function fmtDDay(d){
+  if(d===null) return 'TBD';
+  if(d===0) return 'D-DAY';
+  if(d<0) return '종료';
+  return 'D-' + d;
+}
+
+function fmtDateRange(e){
+  if(!e._dt) return e.date_note || '날짜 미공개';
+  const s = e.date;
+  if(e.date_end && e.date_end !== e.date) return s + ' ~ ' + e.date_end;
+  return s;
+}
+
+function init(){
+  renderTierChips();
+  bindFilters();
+  render();
+}
+
+function renderTierChips(){
+  const tiers = [...new Set(EVENTS.map(e => e.tier))].sort();
+  const el = document.getElementById('tierChips');
+  el.innerHTML = '<span class="chip active" data-tier="">전체</span>' +
+    tiers.map(t => `<span class="chip" data-tier="${t}">${t}</span>`).join('');
+  el.querySelectorAll('.chip').forEach(c => {
+    c.addEventListener('click', () => {
+      el.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+      TIER_FILTER = c.dataset.tier;
+      render();
+    });
+  });
+}
+
+function bindFilters(){
+  ['filterFormat','filterUrgency','filterPriority','filterAudience','filterSearch'].forEach(id => {
+    document.getElementById(id).addEventListener('input', render);
+    document.getElementById(id).addEventListener('change', render);
+  });
+  document.getElementById('hidePast').addEventListener('click', e => {
+    HIDE_PAST = !HIDE_PAST;
+    e.target.classList.toggle('active', HIDE_PAST);
+    e.target.textContent = HIDE_PAST ? '종료된 행사 보이기' : '종료된 행사 숨기기';
+    render();
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    ['filterFormat','filterUrgency','filterPriority','filterAudience','filterSearch'].forEach(id => document.getElementById(id).value = '');
+    TIER_FILTER = '';
+    document.querySelectorAll('#tierChips .chip').forEach((c,i) => c.classList.toggle('active', i===0));
+    HIDE_PAST = false;
+    document.getElementById('hidePast').classList.remove('active');
+    document.getElementById('hidePast').textContent = '종료된 행사 숨기기';
+    render();
+  });
+  document.getElementById('exportCsv').addEventListener('click', exportCsv);
+}
+
+function getFiltered(){
+  const f = {
+    format: document.getElementById('filterFormat').value,
+    urgency: document.getElementById('filterUrgency').value,
+    priority: document.getElementById('filterPriority').value,
+    audience: document.getElementById('filterAudience').value,
+    search: document.getElementById('filterSearch').value.toLowerCase().trim(),
+    tier: TIER_FILTER,
+  };
+  return EVENTS.filter(e => {
+    if(f.tier && e.tier !== f.tier) return false;
+    if(f.format && e.format !== f.format) return false;
+    if(f.urgency && e._status !== f.urgency) return false;
+    if(f.priority && e.priority !== f.priority) return false;
+    if(f.audience && !(e.audience||[]).includes(f.audience)) return false;
+    if(HIDE_PAST && e._status === 'past') return false;
+    if(f.search){
+      const blob = (e.university+' '+e.event_name+' '+(e.location||'')+' '+(e.notes||'')+' '+(e.tags||[]).join(' ')).toLowerCase();
+      if(!blob.includes(f.search)) return false;
+    }
+    return true;
+  }).sort((a,b) => {
+    // 정렬: urgency 우선 (urgent → soon → normal → tbd → past), 그 안에서 D-day 오름차순
+    const statusOrder = {urgent:0, soon:1, normal:2, tbd:3, past:4};
+    if(statusOrder[a._status] !== statusOrder[b._status]) return statusOrder[a._status] - statusOrder[b._status];
+    if(a._dday !== null && b._dday !== null) return a._dday - b._dday;
+    if(a._dday === null) return 1;
+    if(b._dday === null) return -1;
+    return 0;
+  });
+}
+
+function render(){
+  const list = getFiltered();
+  const cards = document.getElementById('cards');
+  cards.innerHTML = list.map(renderCard).join('');
+  document.getElementById('emptyMsg').style.display = list.length ? 'none' : '';
+  renderSummary();
+}
+
+function renderCard(e){
+  const aud = (e.audience||[]).join('·');
+  const tagsHTML = [
+    `<span class="tag tag-tier">${e.tier}</span>`,
+    `<span class="tag tag-format">${e.format||'TBD'}</span>`,
+    e.registration_required ? `<span class="tag tag-reg">사전접수</span>` : `<span class="tag tag-noreg">자유참여</span>`,
+    e._status==='tbd' ? `<span class="tag tag-tbd">일정미정</span>` : '',
+    e.priority ? `<span class="tag tag-pri-${e.priority}">${e.priority==='high'?'필수':e.priority==='medium'?'권장':'선택'}</span>` : '',
+  ].filter(Boolean).join('');
+  const regDeadline = e.registration_deadline && e.registration_deadline !== 'TBD' ?
+    `<span class="k">접수마감</span><span style="color:#f87171;font-weight:700">${e.registration_deadline}</span>` : '';
+  const links = [];
+  if(e.registration_url) links.push(`<a href="${e.registration_url}" target="_blank">📝 접수</a>`);
+  if(e.info_url) links.push(`<a href="${e.info_url}" target="_blank">ℹ️ 정보</a>`);
+  if(e.source_url) links.push(`<a href="${e.source_url}" target="_blank">🔗 출처</a>`);
+  return `
+    <div class="card ${e._status}">
+      <span class="dday">${fmtDDay(e._dday)}</span>
+      <div class="univ">${e.university}</div>
+      <div class="ev-name">${e.event_name}</div>
+      <div class="date">📅 ${fmtDateRange(e)}${e.time && e.time!=='TBD' ? ' · '+e.time : ''}</div>
+      <div class="meta">
+        <span class="k">장소</span><span>${e.location||'-'}</span>
+        <span class="k">대상</span><span>${aud||'-'}</span>
+        ${e.fee ? `<span class="k">비용</span><span>${e.fee}</span>` : ''}
+        ${regDeadline}
+      </div>
+      <div class="tags">${tagsHTML}</div>
+      ${e.notes ? `<div class="notes">💡 ${e.notes}</div>` : ''}
+      <div class="links">${links.join('')}</div>
+    </div>
+  `;
+}
+
+function renderSummary(){
+  const all = EVENTS;
+  const stats = {
+    total: all.length,
+    urgent: all.filter(e => e._status==='urgent').length,
+    soon: all.filter(e => e._status==='soon').length,
+    high: all.filter(e => e.priority==='high').length,
+    tbd: all.filter(e => e._status==='tbd').length,
+    past: all.filter(e => e._status==='past').length,
+  };
+  document.getElementById('summary').innerHTML = `
+    <div class="sc"><div class="n">${stats.total}</div><div class="l">전체 행사</div></div>
+    <div class="sc urgent"><div class="n">${stats.urgent}</div><div class="l">⚠ 임박 (D-7)</div></div>
+    <div class="sc soon"><div class="n">${stats.soon}</div><div class="l">⏰ 한 달 내</div></div>
+    <div class="sc high"><div class="n">${stats.high}</div><div class="l">⭐ 필수 추천</div></div>
+    <div class="sc tbd"><div class="n">${stats.tbd}</div><div class="l">📅 일정 미정</div></div>
+  `;
+}
+
+loadData();
+
+function exportCsv(){
+  const list = getFiltered();
+  const header = ['대학','행사명','시작일','종료일','장소','형식','대상','사전접수','접수마감','우선도','URL','비고'];
+  const rows = list.map(e => [
+    e.university, e.event_name, e.date, e.date_end||'', e.location||'', e.format||'',
+    (e.audience||[]).join('·'), e.registration_required?'필요':'불필요',
+    e.registration_deadline||'', e.priority||'', e.registration_url||e.info_url||'', (e.notes||'').replace(/\n/g,' ')
+  ]);
+  const csv = '﻿' + [header, ...rows].map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `입시설명회_2027_${new Date().toISOString().split('T')[0]}.csv`;
+  a.click();
+}
+</script>
+</body>
+</html>
