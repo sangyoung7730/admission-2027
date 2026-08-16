@@ -4,7 +4,10 @@ window.EVENTS_DATA =
     "compiled_at": "2026-05-21",
     "target_admission_year": "2027학년도",
     "scope": "수도권 인서울/중하위권 + 거점국립대 + 지방 사립 (문과 우선)",
-    "note": "수집일 기준 공개 일정만 반영. TBD 는 작년 패턴 기준 시기 추정이며, 확정되면 갱신 필요. 5월 21일 이전 종료된 행사는 제외."
+    "note": "수집일 기준 공개 일정만 반영. TBD 는 작년 패턴 기준 시기 추정이며, 확정되면 갱신 필요. 5월 21일 이전 종료된 행사는 제외.",
+    "scope_criteria": "지원권 기준(2026-08-16 확정): ① 수도권(서울·인천·경기) ② 수도권 인근 국공립대 ③ 경기남부~천안 사립 / 논술은 약식(약술형) 논술까지만 응시 가능",
+    "note_essay": "약술형(약식) 논술 실시 대학 참고(2026학년도 기준, 2027 요강 확정 시 재확인): 가천대·수원대·을지대·삼육대·한신대·서경대·상명대·한국공학대 등. 일반(정통) 논술 전형은 지원 대상 아님",
+    "updated_at": "2026-08-16"
   },
   "events": [
     {
@@ -15,7 +18,11 @@ window.EVENTS_DATA =
       "time": "행사 당일 (세부시간 누리집 확인)",
       "location": "아주대학교 체육관·연암관 (수원)",
       "format": "오프라인",
-      "audience": ["수험생", "학부모", "교사"],
+      "audience": [
+        "수험생",
+        "학부모",
+        "교사"
+      ],
       "registration_required": true,
       "registration_deadline": "2026-07-11",
       "registration_url": "https://www.goe-jinhakexpo.co.kr/",
@@ -25,8 +32,14 @@ window.EVENTS_DATA =
       "source_url": "https://www.goe-jinhakexpo.co.kr/",
       "tier": "박람회",
       "humanities_relevant": true,
-      "tags": ["박람회", "필수참여추천", "중하위권최적"],
-      "priority": "high"
+      "tags": [
+        "박람회",
+        "필수참여추천",
+        "중하위권최적"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "박람회(수원)"
     },
     {
       "university": "경기도교육청 (경기북부)",
@@ -36,7 +49,11 @@ window.EVENTS_DATA =
       "time": "행사 당일 (세부시간 누리집 확인)",
       "location": "고양 킨텍스 제2전시관 6홀",
       "format": "오프라인",
-      "audience": ["수험생", "학부모", "교사"],
+      "audience": [
+        "수험생",
+        "학부모",
+        "교사"
+      ],
       "registration_required": true,
       "registration_deadline": "2026-07-18",
       "registration_url": "https://www.goe-jinhakexpo.co.kr/",
@@ -46,8 +63,14 @@ window.EVENTS_DATA =
       "source_url": "https://www.goe-jinhakexpo.co.kr/",
       "tier": "박람회",
       "humanities_relevant": true,
-      "tags": ["박람회", "필수참여추천", "중하위권최적"],
-      "priority": "high"
+      "tags": [
+        "박람회",
+        "필수참여추천",
+        "중하위권최적"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "박람회(고양)"
     },
     {
       "university": "코엑스 / 한국대학교육협의회",
@@ -57,7 +80,11 @@ window.EVENTS_DATA =
       "time": "10:00-17:00 (입장마감 16:30)",
       "location": "코엑스(서울 강남구) 1층 A홀",
       "format": "오프라인",
-      "audience": ["수험생", "학부모", "교사"],
+      "audience": [
+        "수험생",
+        "학부모",
+        "교사"
+      ],
       "registration_required": true,
       "registration_deadline": "2026-07-25",
       "registration_url": "https://univexpo.kr/sub-04-01?hl=ko",
@@ -67,8 +94,13 @@ window.EVENTS_DATA =
       "source_url": "https://univexpo.kr/",
       "tier": "박람회",
       "humanities_relevant": true,
-      "tags": ["박람회", "필수참여추천"],
-      "priority": "high"
+      "tags": [
+        "박람회",
+        "필수참여추천"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "박람회(서울)"
     },
     {
       "university": "코엑스 / 한국대학교육협의회",
@@ -78,7 +110,10 @@ window.EVENTS_DATA =
       "time": "10:00-17:00",
       "location": "코엑스(서울 강남구) 1층 A홀 (예상)",
       "format": "오프라인",
-      "audience": ["수험생", "학부모"],
+      "audience": [
+        "수험생",
+        "학부모"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -88,8 +123,14 @@ window.EVENTS_DATA =
       "source_url": "https://www.coex.co.kr/exhibitions/2026%ED%95%99%EB%85%84%EB%8F%84-%EC%A0%95%EC%8B%9C-%EB%8C%80%ED%95%99%EC%9E%85%ED%95%99%EC%A0%95%EB%B3%B4%EB%B0%95%EB%9E%8C%ED%9A%8C/",
       "tier": "박람회",
       "humanities_relevant": true,
-      "tags": ["박람회", "정시", "TBD"],
-      "priority": "high"
+      "tags": [
+        "박람회",
+        "정시",
+        "TBD"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "박람회(서울)"
     },
     {
       "university": "중앙대학교",
@@ -99,7 +140,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전국 롯데시네마 (서울/인천/경기/대전/대구/부산/광주/창원/제주)",
       "format": "오프라인",
-      "audience": ["수험생", "학부모"],
+      "audience": [
+        "수험생",
+        "학부모"
+      ],
       "registration_required": true,
       "registration_deadline": "각 회차별 사전 신청",
       "registration_url": "https://admission.cau.ac.kr/",
@@ -109,8 +153,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.cau.ac.kr/resources/intro_2027_admission.html",
       "tier": "인서울_중경외시",
       "humanities_relevant": true,
-      "tags": ["전국순회", "영화관"],
-      "priority": "high"
+      "tags": [
+        "전국순회",
+        "영화관"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "중앙대학교",
@@ -120,7 +169,10 @@ window.EVENTS_DATA =
       "time": "수/목/금",
       "location": "전국 고등학교",
       "format": "오프라인",
-      "audience": ["교사", "수험생"],
+      "audience": [
+        "교사",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "2026-04-08 (마감)",
       "registration_url": "https://admission.cau.ac.kr/",
@@ -130,8 +182,12 @@ window.EVENTS_DATA =
       "source_url": "https://admission.cau.ac.kr/resources/intro_2027_admission.html",
       "tier": "인서울_중경외시",
       "humanities_relevant": true,
-      "tags": ["고교방문"],
-      "priority": "medium"
+      "tags": [
+        "고교방문"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "고려대학교",
@@ -141,7 +197,11 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "안암캠퍼스 / 지역 거점도시",
       "format": "오프라인",
-      "audience": ["수험생", "학부모", "교사"],
+      "audience": [
+        "수험생",
+        "학부모",
+        "교사"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -151,8 +211,13 @@ window.EVENTS_DATA =
       "source_url": "https://oku.korea.ac.kr/oku/index.do",
       "tier": "인서울_SKY",
       "humanities_relevant": true,
-      "tags": ["TBD", "확인필요"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "확인필요"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "연세대학교",
@@ -162,7 +227,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전국 거점도시",
       "format": "오프라인/온라인 혼합",
-      "audience": ["수험생", "학부모"],
+      "audience": [
+        "수험생",
+        "학부모"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -172,8 +240,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/calendar.asp",
       "tier": "인서울_SKY",
       "humanities_relevant": true,
-      "tags": ["TBD", "확인필요"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "확인필요"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "서울대학교",
@@ -183,7 +256,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "관악캠퍼스 / 자치구청 (예년 관악구청 대강당 등)",
       "format": "오프라인/온라인",
-      "audience": ["수험생", "학부모"],
+      "audience": [
+        "수험생",
+        "학부모"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -193,8 +269,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.snu.ac.kr/",
       "tier": "인서울_SKY",
       "humanities_relevant": true,
-      "tags": ["TBD", "확인필요"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "확인필요"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "서강대학교",
@@ -204,7 +285,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서강대 캠퍼스 / COEX 박람회",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -214,8 +298,12 @@ window.EVENTS_DATA =
       "source_url": "https://admission.sogang.ac.kr/enter/html/counsel/notice.asp",
       "tier": "인서울_서성한",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "high"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "성균관대학교",
@@ -225,7 +313,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "인문사회과학캠퍼스(혜화/명륜) 또는 자연과학캠퍼스(수원)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -235,8 +326,12 @@ window.EVENTS_DATA =
       "source_url": "https://admission.skku.edu/",
       "tier": "인서울_서성한",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "high"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "한양대학교",
@@ -246,7 +341,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서울캠퍼스(왕십리) / ERICA(안산)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -256,8 +354,12 @@ window.EVENTS_DATA =
       "source_url": "https://go.hanyang.ac.kr/",
       "tier": "인서울_서성한",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "high"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "경희대학교",
@@ -267,7 +369,11 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전국 권역별 + 서울캠퍼스/국제캠퍼스",
       "format": "오프라인",
-      "audience": ["수험생", "학부모", "교사"],
+      "audience": [
+        "수험생",
+        "학부모",
+        "교사"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -277,8 +383,13 @@ window.EVENTS_DATA =
       "source_url": "https://iphak.khu.ac.kr/",
       "tier": "인서울_중경외시",
       "humanities_relevant": true,
-      "tags": ["TBD", "확인필요"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "확인필요"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "한국외국어대학교",
@@ -288,7 +399,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서울캠퍼스(이문동) / 글로벌캠퍼스(용인)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -298,8 +412,13 @@ window.EVENTS_DATA =
       "source_url": "https://adms.hufs.ac.kr/index.do",
       "tier": "인서울_중경외시",
       "humanities_relevant": true,
-      "tags": ["TBD", "문과강세"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "문과강세"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "서울시립대학교",
@@ -309,7 +428,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서울시립대 캠퍼스(전농)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -319,8 +441,12 @@ window.EVENTS_DATA =
       "source_url": "https://enter.uos.ac.kr/",
       "tier": "인서울_중경외시",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "high"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권 공립"
     },
     {
       "university": "건국대학교",
@@ -330,7 +456,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "건국대 캠퍼스(능동)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -340,8 +469,12 @@ window.EVENTS_DATA =
       "source_url": "https://enter.konkuk.ac.kr/",
       "tier": "인서울_건동홍",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "medium"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "동국대학교",
@@ -351,7 +484,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "동국대 캠퍼스(필동)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -361,8 +497,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.dongguk.edu/",
       "tier": "인서울_건동홍",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "medium"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "홍익대학교",
@@ -372,7 +512,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "홍익대 캠퍼스(상수)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -382,8 +525,12 @@ window.EVENTS_DATA =
       "source_url": "https://ibsi.hongik.ac.kr/",
       "tier": "인서울_건동홍",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "medium"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "이화여자대학교",
@@ -393,7 +540,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "이화여대 캠퍼스(대현)",
       "format": "오프라인/온라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -403,8 +553,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.ewha.ac.kr/admission/html/ewharo/seminar.asp",
       "tier": "인서울_여대",
       "humanities_relevant": true,
-      "tags": ["TBD", "여대"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "여대"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "숙명여자대학교",
@@ -414,7 +569,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "숙명여대 캠퍼스(청파)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -424,8 +582,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.sookmyung.ac.kr/",
       "tier": "인서울_여대",
       "humanities_relevant": true,
-      "tags": ["TBD", "여대"],
-      "priority": "high"
+      "tags": [
+        "TBD",
+        "여대"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "숭실대학교",
@@ -435,7 +598,9 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전국 고등학교",
       "format": "오프라인",
-      "audience": ["수험생"],
+      "audience": [
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "각 회차별",
       "registration_url": "https://iphak.ssu.ac.kr/",
@@ -445,8 +610,12 @@ window.EVENTS_DATA =
       "source_url": "https://iphak.ssu.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["고교방문"],
-      "priority": "medium"
+      "tags": [
+        "고교방문"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "가톨릭대학교",
@@ -456,7 +625,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전국 고등학교",
       "format": "오프라인",
-      "audience": ["교사", "수험생"],
+      "audience": [
+        "교사",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "https://iphak.catholic.ac.kr/",
@@ -466,8 +638,12 @@ window.EVENTS_DATA =
       "source_url": "https://www.veritas-a.com/news/articleView.html?idxno=606412",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["고교방문"],
-      "priority": "low"
+      "tags": [
+        "고교방문"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "인하대학교",
@@ -477,7 +653,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "인하대 캠퍼스(인천 용현)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -487,8 +666,12 @@ window.EVENTS_DATA =
       "source_url": "https://admission.inha.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "medium"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권(인천)"
     },
     {
       "university": "아주대학교",
@@ -498,7 +681,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "아주대 캠퍼스(수원)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -508,8 +694,12 @@ window.EVENTS_DATA =
       "source_url": "https://admission.ajou.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "medium"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "경기남부(수원)"
     },
     {
       "university": "가천대학교",
@@ -519,18 +709,25 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "가천대 글로벌캠퍼스(성남)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
       "info_url": "https://admission.gachon.ac.kr/",
       "fee": "무료",
-      "notes": "예년 7~9월 설명회",
+      "notes": "예년 7~9월 설명회 ★약술형(약식) 논술 실시 대학(2026 기준) — 논술 조건 부합, 우선 검토 추천",
       "source_url": "https://admission.gachon.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "경기(성남) + 약술형논술"
     },
     {
       "university": "단국대학교",
@@ -540,7 +737,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "죽전캠퍼스(용인) / 천안캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -550,8 +750,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.dankook.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기(용인)/천안"
     },
     {
       "university": "세종대학교",
@@ -561,7 +765,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "세종대 캠퍼스(군자)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -571,8 +778,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.sejong.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "광운대학교",
@@ -582,7 +793,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "광운대 캠퍼스(노원)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -592,8 +806,12 @@ window.EVENTS_DATA =
       "source_url": "https://iphak.kw.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "국민대학교",
@@ -603,7 +821,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "국민대 캠퍼스(정릉)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -613,8 +834,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.kookmin.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "명지대학교",
@@ -624,7 +849,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서울캠퍼스(인문) / 자연캠퍼스(용인)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -634,8 +862,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.mju.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "성신여자대학교",
@@ -645,7 +877,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "성신여대 운정녹지캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -655,8 +890,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.sungshin.ac.kr/",
       "tier": "수도권_여대",
       "humanities_relevant": true,
-      "tags": ["TBD", "여대"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "여대"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "서울여자대학교",
@@ -666,7 +906,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서울여대 캠퍼스(공릉)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -676,8 +919,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.swu.ac.kr/",
       "tier": "수도권_여대",
       "humanities_relevant": true,
-      "tags": ["TBD", "여대"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "여대"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "덕성여자대학교",
@@ -687,18 +935,26 @@ window.EVENTS_DATA =
       "time": "온라인",
       "location": "온라인",
       "format": "온라인",
-      "audience": ["수험생"],
+      "audience": [
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD (7월 초)",
       "registration_url": "https://admission.duksung.ac.kr/",
       "info_url": "https://admission.duksung.ac.kr/",
       "fee": "무료",
-      "notes": "논술전형 지원 예정 시 필참. 사전등록 후 응시",
+      "notes": "논술전형 지원 예정 시 필참. 사전등록 후 응시 ※덕성여대 논술은 일반 인문논술 유형 — 약식논술까지만 가능 조건과 맞지 않을 수 있음. 2027 요강 확인 필요",
       "source_url": "https://www.adiga.kr/uct/gdf/univEventView.do?menuId=PCUCTGDF1000",
       "tier": "수도권_여대",
       "humanities_relevant": true,
-      "tags": ["모의논술", "여대", "확정일정"],
-      "priority": "medium"
+      "tags": [
+        "모의논술",
+        "여대",
+        "확정일정"
+      ],
+      "priority": "low",
+      "scope": "조건부",
+      "scope_reason": "서울 소재이나 일반 인문논술 유형 — 약식논술 조건과 상이, 유형 확인 필요"
     },
     {
       "university": "서울대 (관악구청 주관)",
@@ -708,7 +964,10 @@ window.EVENTS_DATA =
       "time": "예년 18:30~20:30",
       "location": "관악구청 대강당(예상)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -718,8 +977,13 @@ window.EVENTS_DATA =
       "source_url": "https://biz.heraldcorp.com/article/10500491",
       "tier": "인서울_SKY",
       "humanities_relevant": true,
-      "tags": ["TBD", "지자체주관"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "지자체주관"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "강원대학교",
@@ -729,7 +993,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "춘천캠퍼스 / 삼척캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -739,8 +1006,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.kangwon.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "수도권 인근 국립(춘천)"
     },
     {
       "university": "충북대학교",
@@ -750,7 +1022,11 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "충북대 캠퍼스(청주) + 고교방문 + 온라인(Zoom)",
       "format": "하이브리드",
-      "audience": ["학부모", "수험생", "교사"],
+      "audience": [
+        "학부모",
+        "수험생",
+        "교사"
+      ],
       "registration_required": true,
       "registration_deadline": "각 회차별",
       "registration_url": "https://ipsi.chungbuk.ac.kr/kor/presentation/calendar.do",
@@ -760,8 +1036,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.chungbuk.ac.kr/kor/presentation/calendar.do",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["거점국립대", "캘린더운영"],
-      "priority": "high"
+      "tags": [
+        "거점국립대",
+        "캘린더운영"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "수도권 인근 국립(청주)"
     },
     {
       "university": "충남대학교",
@@ -771,7 +1052,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "대전캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -781,8 +1065,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.cnu.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "medium",
+      "scope": "조건부",
+      "scope_reason": "대전 국립 — 천안 이남, 거리 판단 필요"
     },
     {
       "university": "전북대학교",
@@ -792,7 +1081,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전주캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -802,8 +1094,13 @@ window.EVENTS_DATA =
       "source_url": "https://enter.jbnu.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "전주 — 지원권 밖"
     },
     {
       "university": "전남대학교",
@@ -813,7 +1110,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "광주캠퍼스 / 여수캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "https://events.jnu.ac.kr/",
@@ -823,8 +1123,13 @@ window.EVENTS_DATA =
       "source_url": "https://events.jnu.ac.kr/Schedule.aspx?mode=1",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "광주 — 지원권 밖"
     },
     {
       "university": "경북대학교",
@@ -834,7 +1139,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "대구캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -844,8 +1152,13 @@ window.EVENTS_DATA =
       "source_url": "https://enter.knu.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "대구 — 지원권 밖"
     },
     {
       "university": "부산대학교",
@@ -855,7 +1168,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "부산캠퍼스(장전)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -865,8 +1181,13 @@ window.EVENTS_DATA =
       "source_url": "https://go.pusan.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "부산 — 지원권 밖"
     },
     {
       "university": "경상국립대학교",
@@ -876,7 +1197,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "진주캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -886,8 +1210,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.gnu.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "진주 — 지원권 밖"
     },
     {
       "university": "제주대학교",
@@ -897,7 +1226,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "제주캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -907,8 +1239,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.jejunu.ac.kr/",
       "tier": "거점국립대",
       "humanities_relevant": true,
-      "tags": ["TBD", "거점국립대"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "거점국립대"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "제주 — 지원권 밖"
     },
     {
       "university": "EBSi (안동)",
@@ -918,7 +1255,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "안동시 (장소 별도 공지)",
       "format": "오프라인",
-      "audience": ["수험생", "학부모"],
+      "audience": [
+        "수험생",
+        "학부모"
+      ],
       "registration_required": true,
       "registration_deadline": "사전신청",
       "registration_url": "",
@@ -928,8 +1268,13 @@ window.EVENTS_DATA =
       "source_url": "https://about.ebs.co.kr/board/bbs?boardTypeId=1&boardId=31",
       "tier": "전국_박람회",
       "humanities_relevant": true,
-      "tags": ["EBS", "지방"],
-      "priority": "medium"
+      "tags": [
+        "EBS",
+        "지방"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "안동 행사 — 지원권 밖"
     },
     {
       "university": "EBSi",
@@ -939,7 +1284,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "전국 권역별 (교육청 공동주관)",
       "format": "오프라인/온라인",
-      "audience": ["수험생", "학부모"],
+      "audience": [
+        "수험생",
+        "학부모"
+      ],
       "registration_required": true,
       "registration_deadline": "회차별",
       "registration_url": "https://www.ebsi.co.kr/ebs/ent/enta/retrieveIpsiBriefingList.ebs",
@@ -949,8 +1297,13 @@ window.EVENTS_DATA =
       "source_url": "https://www.ebsi.co.kr/ebs/ent/enta/retrieveIpsiBriefingList.ebs",
       "tier": "전국_박람회",
       "humanities_relevant": true,
-      "tags": ["EBS", "수시갱신"],
-      "priority": "medium"
+      "tags": [
+        "EBS",
+        "수시갱신"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "전국 순회 — 수도권 회차 선택"
     },
     {
       "university": "수원대학교",
@@ -960,18 +1313,26 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "수원대 캠퍼스(화성 봉담)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
       "info_url": "https://ipsi.suwon.ac.kr/",
       "fee": "무료",
-      "notes": "이미 1차 모의논술 진행 — 2차 일정 또는 학부모 설명회 별도 공지 예정. ☎ 031-229-8420~2",
+      "notes": "이미 1차 모의논술 진행 — 2차 일정 또는 학부모 설명회 별도 공지 예정. ☎ 031-229-8420~2 ★약술형(약식) 논술 실시 대학(2026 기준) — 논술 조건 부합",
       "source_url": "https://ipsi.suwon.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "high",
+      "scope": "적합",
+      "scope_reason": "경기남부(화성) + 약술형논술"
     },
     {
       "university": "안양대학교",
@@ -981,7 +1342,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "안양대 캠퍼스(안양) / 강화캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -991,8 +1355,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.anyang.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기(안양)"
     },
     {
       "university": "삼육대학교",
@@ -1002,18 +1370,25 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "삼육대 캠퍼스(서울 노원)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
       "info_url": "https://ipsi.syu.ac.kr/",
       "fee": "무료",
-      "notes": "노원 위치이나 인서울 주요권 아님. 보건·간호·신학 강세",
+      "notes": "노원 위치이나 인서울 주요권 아님. 보건·간호·신학 강세 ★약술형(약식) 논술 실시 대학(2026 기준) — 논술 조건 부합",
       "source_url": "https://ipsi.syu.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "서울(노원) + 약술형논술"
     },
     {
       "university": "강남대학교",
@@ -1023,7 +1398,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "강남대 캠퍼스(용인 기흥)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1033,8 +1411,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.kangnam.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기남부(용인)"
     },
     {
       "university": "한신대학교",
@@ -1044,18 +1427,26 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한신대 캠퍼스(오산)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
       "info_url": "https://ipsi.hs.ac.kr/",
       "fee": "무료",
-      "notes": "신학·사회복지·경영·평화안보 학과 — 문과 적합",
+      "notes": "신학·사회복지·경영·평화안보 학과 — 문과 적합 ★약술형(약식) 논술 실시 대학(2026 기준) — 논술 조건 부합",
       "source_url": "https://ipsi.hs.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "경기남부(오산) + 약술형논술"
     },
     {
       "university": "협성대학교",
@@ -1065,7 +1456,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "협성대 캠퍼스(화성 봉담)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1075,8 +1469,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.uhs.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기남부(화성)"
     },
     {
       "university": "평택대학교",
@@ -1086,7 +1485,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "평택대 캠퍼스(평택)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1096,8 +1498,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.ptu.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기남부(평택)"
     },
     {
       "university": "한경국립대학교",
@@ -1107,7 +1514,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한경국립대(안성/평택 캠퍼스)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1117,8 +1527,14 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.hknu.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권", "국립대"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "수원~천안권",
+        "국립대"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "경기남부 국립(안성)"
     },
     {
       "university": "용인대학교",
@@ -1128,7 +1544,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "용인대 캠퍼스(용인 처인)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1138,8 +1557,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.yongin.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기남부(용인)"
     },
     {
       "university": "한국항공대학교",
@@ -1149,7 +1573,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한국항공대 캠퍼스(고양 화전)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1159,8 +1586,12 @@ window.EVENTS_DATA =
       "source_url": "https://go.kau.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": false,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기(고양)"
     },
     {
       "university": "한성대학교",
@@ -1170,7 +1601,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한성대 캠퍼스(서울 성북)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1180,8 +1614,12 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.hansung.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD"],
-      "priority": "low"
+      "tags": [
+        "TBD"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "수도권"
     },
     {
       "university": "남서울대학교",
@@ -1191,7 +1629,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "남서울대 캠퍼스(천안 성환)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1201,8 +1642,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.nsu.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "천안(성환)"
     },
     {
       "university": "백석대학교",
@@ -1212,7 +1658,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "백석대 캠퍼스(천안)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1222,8 +1671,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.bu.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "천안"
     },
     {
       "university": "선문대학교",
@@ -1233,7 +1687,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "선문대 캠퍼스(천안/아산)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1243,8 +1700,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.sunmoon.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "조건부",
+      "scope_reason": "아산 소재 — 천안 인접, 거리 판단 필요"
     },
     {
       "university": "호서대학교",
@@ -1254,7 +1716,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "호서대 캠퍼스(천안/아산)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1264,8 +1729,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.hoseo.edu/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "천안캠퍼스 보유(천안/아산)"
     },
     {
       "university": "순천향대학교",
@@ -1275,7 +1745,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "순천향대 캠퍼스(아산 신창)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1285,8 +1758,13 @@ window.EVENTS_DATA =
       "source_url": "https://admission.sch.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": true,
-      "tags": ["TBD", "수원~천안권"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "수원~천안권"
+      ],
+      "priority": "medium",
+      "scope": "조건부",
+      "scope_reason": "아산(신창) — 천안 인접, 거리 판단 필요"
     },
     {
       "university": "한국기술교육대학교 (코리아텍)",
@@ -1296,7 +1774,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "코리아텍 캠퍼스(천안)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1306,8 +1787,14 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.koreatech.ac.kr/",
       "tier": "수도권_중하위",
       "humanities_relevant": false,
-      "tags": ["TBD", "수원~천안권", "국립"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "수원~천안권",
+        "국립"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "천안 국립"
     },
     {
       "university": "경기대학교",
@@ -1317,7 +1804,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "경기대 캠퍼스(수원 영통)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1327,8 +1817,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.kyonggi.ac.kr/",
       "tier": "경기남부",
       "humanities_relevant": true,
-      "tags": ["TBD", "경기남부"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "경기남부"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "경기남부(수원)"
     },
     {
       "university": "한양대학교 ERICA",
@@ -1338,7 +1833,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한양대 ERICA 캠퍼스(안산 상록)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1348,8 +1846,14 @@ window.EVENTS_DATA =
       "source_url": "https://go.hanyang.ac.kr/",
       "tier": "경기남부",
       "humanities_relevant": true,
-      "tags": ["TBD", "경기남부", "안산"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "경기남부",
+        "안산"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "경기남부(안산)"
     },
     {
       "university": "한국공학대학교 (구 한국산업기술대)",
@@ -1359,18 +1863,27 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한국공학대 캠퍼스(시흥)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
       "info_url": "https://ipsi.tukorea.ac.kr/",
       "fee": "무료",
-      "notes": "시흥 위치. 공학 중심이나 경영학·디자인 등 일부 문과 학과",
+      "notes": "시흥 위치. 공학 중심이나 경영학·디자인 등 일부 문과 학과 ★약술형(약식) 논술 실시(2026 기준)이나 문과 학과 제한적",
       "source_url": "https://ipsi.tukorea.ac.kr/",
       "tier": "경기남부",
       "humanities_relevant": false,
-      "tags": ["TBD", "경기남부", "시흥"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "경기남부",
+        "시흥"
+      ],
+      "priority": "low",
+      "scope": "적합",
+      "scope_reason": "경기남부(시흥) + 약술형논술"
     },
     {
       "university": "한밭대학교",
@@ -1380,7 +1893,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한밭대 캠퍼스(대전 유성)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1390,8 +1906,14 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.hanbat.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권", "국립"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "충청권",
+        "국립"
+      ],
+      "priority": "medium",
+      "scope": "조건부",
+      "scope_reason": "대전 국립 — 천안 이남, 거리 판단 필요"
     },
     {
       "university": "한남대학교",
@@ -1401,7 +1923,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한남대 캠퍼스(대전 대덕)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1411,8 +1936,13 @@ window.EVENTS_DATA =
       "source_url": "https://hnuhope.hannam.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "대전 사립 — 지원권 밖"
     },
     {
       "university": "대전대학교",
@@ -1422,7 +1952,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "대전대 캠퍼스(대전 동구)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1432,8 +1965,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.dju.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "대전 사립 — 지원권 밖"
     },
     {
       "university": "배재대학교",
@@ -1443,7 +1981,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "배재대 캠퍼스(대전 서구)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1453,8 +1994,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.pcu.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "대전 사립 — 지원권 밖"
     },
     {
       "university": "우송대학교",
@@ -1464,7 +2010,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "우송대 캠퍼스(대전 동구)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1474,8 +2023,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.wsu.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "대전 사립 — 지원권 밖"
     },
     {
       "university": "목원대학교",
@@ -1485,7 +2039,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "목원대 캠퍼스(대전 서구)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1495,8 +2052,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.mokwon.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "대전 사립 — 지원권 밖"
     },
     {
       "university": "공주대학교",
@@ -1506,7 +2068,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "공주캠퍼스 / 천안캠퍼스 / 예산캠퍼스",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1516,8 +2081,14 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.kongju.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권", "국립"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "충청권",
+        "국립"
+      ],
+      "priority": "medium",
+      "scope": "적합",
+      "scope_reason": "국립 + 천안캠퍼스 보유"
     },
     {
       "university": "청주대학교",
@@ -1527,7 +2098,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "청주대 캠퍼스(청주 상당)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1537,8 +2111,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.cju.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "청주 사립 — 지원권 밖"
     },
     {
       "university": "서원대학교",
@@ -1548,7 +2127,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "서원대 캠퍼스(청주 흥덕)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1558,8 +2140,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.seowon.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "청주 사립 — 지원권 밖"
     },
     {
       "university": "한서대학교",
@@ -1569,7 +2156,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "한서대 캠퍼스(서산)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1579,8 +2169,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.hanseo.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "서산 — 지원권 밖"
     },
     {
       "university": "건국대학교 글로컬캠퍼스",
@@ -1590,7 +2185,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "건국대 글로컬캠퍼스(충주)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1600,8 +2198,13 @@ window.EVENTS_DATA =
       "source_url": "https://kuglocal.konkuk.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "medium"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "충주 사립 — 지원권 밖"
     },
     {
       "university": "세명대학교",
@@ -1611,7 +2214,10 @@ window.EVENTS_DATA =
       "time": "TBD",
       "location": "세명대 캠퍼스(제천)",
       "format": "오프라인",
-      "audience": ["학부모", "수험생"],
+      "audience": [
+        "학부모",
+        "수험생"
+      ],
       "registration_required": true,
       "registration_deadline": "TBD",
       "registration_url": "",
@@ -1621,8 +2227,13 @@ window.EVENTS_DATA =
       "source_url": "https://ipsi.semyung.ac.kr/",
       "tier": "충청권",
       "humanities_relevant": true,
-      "tags": ["TBD", "충청권"],
-      "priority": "low"
+      "tags": [
+        "TBD",
+        "충청권"
+      ],
+      "priority": "low",
+      "scope": "범위밖",
+      "scope_reason": "제천 — 지원권 밖"
     }
   ]
 }

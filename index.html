@@ -66,6 +66,10 @@ body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#0f
 .tag-pri-high{background:#dc2626;color:#fff}
 .tag-pri-medium{background:#f59e0b;color:#000}
 .tag-pri-low{background:#64748b;color:#fff}
+.tag-scope-in{background:#16a34a;color:#fff}
+.tag-scope-cond{background:#eab308;color:#000}
+.tag-scope-out{background:#7f1d1d;color:#fca5a5}
+.card.outscope{opacity:.5}
 
 .card .notes{font-size:11px;color:#94a3b8;background:#0f172a;border-radius:6px;padding:8px 10px;margin-top:8px;line-height:1.5}
 .card .links{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
@@ -88,8 +92,9 @@ body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#0f
 
 <div class="header">
   <h1>🎓 2027학년도 대학 입시설명회 대시보드</h1>
-  <p>두레생협 가이의 따님 입시 준비용 | 수도권 인서울/중하위권 + 거점국립대 + 지방 사립 | 문과 우선</p>
-  <p class="meta">수집일: 2026-05-21 · 화면 우측 D-Day 기준 자동 정렬 · 사전접수 필요 행사는 마감일 임박 시 빨강 표시</p>
+  <p>두레생협 가이의 따님 입시 준비용 | 문과 우선</p>
+  <p class="meta" style="color:#86efac">✅ 지원권 기준(26.8.16 확정): 수도권 전체 + 수도권 인근 국공립대 + 경기남부~천안 · 논술은 약식(약술형)까지만 — 범위밖 대학은 흐리게 표시</p>
+  <p class="meta">화면 우측 D-Day 기준 자동 정렬 · 사전접수 필요 행사는 마감일 임박 시 빨강 표시</p>
 </div>
 
 <div class="wrap">
@@ -125,6 +130,13 @@ body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#0f
       <option value="medium">권장</option>
       <option value="low">선택</option>
     </select>
+    <label>지원권</label>
+    <select id="filterScope">
+      <option value="적합" selected>✅ 적합만</option>
+      <option value="">전체</option>
+      <option value="조건부">🟡 조건부</option>
+      <option value="범위밖">🚫 범위밖</option>
+    </select>
     <label>대상</label>
     <select id="filterAudience">
       <option value="">전체</option>
@@ -153,7 +165,7 @@ body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#0f
 
 <script src="events.js"></script>
 <script>
-const TODAY = new Date('2026-05-21'); // 데이터 수집 기준일. 실제 사용 시 new Date() 로 변경 가능
+const TODAY = new Date(); // 오늘 날짜 기준 D-Day 계산 (26.8.16부터 실시간 기준으로 변경)
 TODAY.setHours(0,0,0,0);
 
 let EVENTS = [];
@@ -234,7 +246,7 @@ function renderTierChips(){
 }
 
 function bindFilters(){
-  ['filterFormat','filterUrgency','filterPriority','filterAudience','filterSearch'].forEach(id => {
+  ['filterFormat','filterUrgency','filterPriority','filterScope','filterAudience','filterSearch'].forEach(id => {
     document.getElementById(id).addEventListener('input', render);
     document.getElementById(id).addEventListener('change', render);
   });
@@ -246,6 +258,7 @@ function bindFilters(){
   });
   document.getElementById('resetBtn').addEventListener('click', () => {
     ['filterFormat','filterUrgency','filterPriority','filterAudience','filterSearch'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('filterScope').value = '적합';
     TIER_FILTER = '';
     document.querySelectorAll('#tierChips .chip').forEach((c,i) => c.classList.toggle('active', i===0));
     HIDE_PAST = false;
@@ -261,6 +274,7 @@ function getFiltered(){
     format: document.getElementById('filterFormat').value,
     urgency: document.getElementById('filterUrgency').value,
     priority: document.getElementById('filterPriority').value,
+    scope: document.getElementById('filterScope').value,
     audience: document.getElementById('filterAudience').value,
     search: document.getElementById('filterSearch').value.toLowerCase().trim(),
     tier: TIER_FILTER,
@@ -270,6 +284,7 @@ function getFiltered(){
     if(f.format && e.format !== f.format) return false;
     if(f.urgency && e._status !== f.urgency) return false;
     if(f.priority && e.priority !== f.priority) return false;
+    if(f.scope && (e.scope||'적합') !== f.scope) return false;
     if(f.audience && !(e.audience||[]).includes(f.audience)) return false;
     if(HIDE_PAST && e._status === 'past') return false;
     if(f.search){
@@ -298,7 +313,9 @@ function render(){
 
 function renderCard(e){
   const aud = (e.audience||[]).join('·');
+  const scopeCls = e.scope==='범위밖'?'out':(e.scope==='조건부'?'cond':'in');
   const tagsHTML = [
+    e.scope ? `<span class="tag tag-scope-${scopeCls}" title="${e.scope_reason||''}">${e.scope==='적합'?'✅ 지원권':e.scope==='조건부'?'🟡 조건부':'🚫 범위밖'}</span>` : '',
     `<span class="tag tag-tier">${e.tier}</span>`,
     `<span class="tag tag-format">${e.format||'TBD'}</span>`,
     e.registration_required ? `<span class="tag tag-reg">사전접수</span>` : `<span class="tag tag-noreg">자유참여</span>`,
@@ -312,7 +329,7 @@ function renderCard(e){
   if(e.info_url) links.push(`<a href="${e.info_url}" target="_blank">ℹ️ 정보</a>`);
   if(e.source_url) links.push(`<a href="${e.source_url}" target="_blank">🔗 출처</a>`);
   return `
-    <div class="card ${e._status}">
+    <div class="card ${e._status}${e.scope==='범위밖'?' outscope':''}">
       <span class="dday">${fmtDDay(e._dday)}</span>
       <div class="univ">${e.university}</div>
       <div class="ev-name">${e.event_name}</div>
@@ -324,6 +341,7 @@ function renderCard(e){
         ${regDeadline}
       </div>
       <div class="tags">${tagsHTML}</div>
+      ${e.scope_reason ? `<div class="notes" style="margin-top:6px">📍 ${e.scope_reason}</div>` : ''}
       ${e.notes ? `<div class="notes">💡 ${e.notes}</div>` : ''}
       <div class="links">${links.join('')}</div>
     </div>
@@ -339,9 +357,11 @@ function renderSummary(){
     high: all.filter(e => e.priority==='high').length,
     tbd: all.filter(e => e._status==='tbd').length,
     past: all.filter(e => e._status==='past').length,
+    inscope: all.filter(e => e.scope==='적합').length,
   };
   document.getElementById('summary').innerHTML = `
     <div class="sc"><div class="n">${stats.total}</div><div class="l">전체 행사</div></div>
+    <div class="sc high"><div class="n">${stats.inscope}</div><div class="l">✅ 지원권 적합</div></div>
     <div class="sc urgent"><div class="n">${stats.urgent}</div><div class="l">⚠ 임박 (D-7)</div></div>
     <div class="sc soon"><div class="n">${stats.soon}</div><div class="l">⏰ 한 달 내</div></div>
     <div class="sc high"><div class="n">${stats.high}</div><div class="l">⭐ 필수 추천</div></div>
@@ -353,9 +373,9 @@ loadData();
 
 function exportCsv(){
   const list = getFiltered();
-  const header = ['대학','행사명','시작일','종료일','장소','형식','대상','사전접수','접수마감','우선도','URL','비고'];
+  const header = ['대학','행사명','지원권','시작일','종료일','장소','형식','대상','사전접수','접수마감','우선도','URL','비고'];
   const rows = list.map(e => [
-    e.university, e.event_name, e.date, e.date_end||'', e.location||'', e.format||'',
+    e.university, e.event_name, e.scope||'', e.date, e.date_end||'', e.location||'', e.format||'',
     (e.audience||[]).join('·'), e.registration_required?'필요':'불필요',
     e.registration_deadline||'', e.priority||'', e.registration_url||e.info_url||'', (e.notes||'').replace(/\n/g,' ')
   ]);
