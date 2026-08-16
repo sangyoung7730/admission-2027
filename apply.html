@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2027학년도 수시 직접 지원 대시보드</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.header{background:linear-gradient(135deg,#1e293b 0%,#0c1222 100%);padding:20px 28px;border-bottom:1px solid #334155}
+.header h1{font-size:22px;color:#f8fafc;font-weight:800;margin-bottom:4px}
+.header p{font-size:12px;color:#94a3b8;line-height:1.5}
+.header .meta{font-size:11px;color:#64748b;margin-top:6px}
+.header .nav{margin-top:10px}
+.header .nav a{font-size:12px;color:#60a5fa;text-decoration:none;background:#0f172a;padding:6px 12px;border-radius:6px;border:1px solid #334155}
+.wrap{max-width:1400px;margin:0 auto;padding:16px 20px}
+
+.banner{background:#1e3a8a30;border:1px solid #3b82f6;border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:13px;line-height:1.6;color:#dbeafe}
+.banner b{color:#fbbf24}
+
+.timeline{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:14px 16px;margin-bottom:16px}
+.timeline h2{font-size:13px;color:#94a3b8;font-weight:700;margin-bottom:10px}
+.tl-item{display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px dashed #334155;font-size:13px}
+.tl-item:last-child{border-bottom:none}
+.tl-item .dday{flex:0 0 64px;font-weight:800;font-size:12px;color:#fbbf24}
+.tl-item .dday.urgent{color:#f87171}
+.tl-item .dday.tbd{color:#64748b}
+.tl-item .nm{color:#f8fafc;font-weight:600}
+.tl-item .dt{color:#94a3b8;font-size:12px}
+.tl-item .est{font-size:10px;color:#000;background:#eab308;border-radius:4px;padding:1px 6px;font-weight:700}
+
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+.sc{background:#1e293b;border:1px solid #334155;border-radius:8px;padding:14px;text-align:center}
+.sc .n{font-size:24px;font-weight:800;color:#fbbf24}
+.sc .l{font-size:11px;color:#94a3b8;margin-top:3px}
+.sc.essay .n{color:#22c55e}
+.sc.cond .n{color:#eab308}
+.sc.wait .n{color:#94a3b8}
+.sc.dday .n{color:#f87171}
+
+.filters{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:14px;margin-bottom:16px}
+.filters .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.filters .row:last-child{margin-bottom:0}
+.filters label{font-size:12px;color:#94a3b8;font-weight:600;margin-right:4px}
+.filters select,.filters input{padding:6px 10px;background:#0f172a;color:#e2e8f0;border:1px solid #334155;border-radius:6px;font-size:12px;font-family:inherit}
+.filters select:focus,.filters input:focus{outline:none;border-color:#3b82f6}
+.filters input[type=text]{min-width:200px}
+.filters .btn{padding:6px 14px;background:#475569;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer}
+.filters .btn:hover{background:#64748b}
+.filters .chip{display:inline-block;padding:4px 10px;background:#0f172a;border:1px solid #334155;border-radius:14px;font-size:11px;color:#94a3b8;cursor:pointer;user-select:none;margin:2px}
+.filters .chip.active{background:#3b82f6;color:#fff;border-color:#3b82f6}
+.filters .chip:hover{border-color:#3b82f6}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:16px;position:relative;border-left:4px solid #3b82f6;transition:.2s}
+.card:hover{border-color:#3b82f6;transform:translateY(-2px)}
+.card.essay{border-left-color:#22c55e}
+.card.cond{border-left-color:#eab308;opacity:.9}
+
+.card .chance{position:absolute;top:14px;right:14px;font-size:11px;font-weight:800;padding:4px 10px;border-radius:14px;background:#0f172a;color:#94a3b8;border:1px solid #334155}
+.card .chance.safe{background:#16a34a;color:#fff;border-color:#16a34a}
+.card .chance.fit{background:#3b82f6;color:#fff;border-color:#3b82f6}
+.card .chance.reach{background:#f59e0b;color:#000;border-color:#f59e0b}
+
+.card .region{font-size:11px;color:#94a3b8;font-weight:600;margin-bottom:4px}
+.card .univ-name{font-size:16px;color:#f8fafc;font-weight:700;margin-bottom:8px;padding-right:70px;line-height:1.35}
+.card .univ-name .campus{font-size:12px;color:#94a3b8;font-weight:600}
+.card .tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.card .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+.tag-group{background:#1e3a8a40;color:#93c5fd}
+.tag-type{background:#16653440;color:#86efac}
+.tag-essay{background:#16a34a;color:#fff}
+.tag-scope-in{background:#16a34a40;color:#86efac}
+.tag-scope-cond{background:#eab308;color:#000}
+.tag-pri-high{background:#dc2626;color:#fff}
+.card .notes{font-size:11px;color:#94a3b8;background:#0f172a;border-radius:6px;padding:8px 10px;margin-top:8px;line-height:1.5}
+.card .links{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.card .links a{font-size:11px;color:#60a5fa;text-decoration:none;background:#0f172a;padding:5px 10px;border-radius:5px;border:1px solid #334155}
+.card .links a:hover{background:#1e3a8a40;border-color:#3b82f6}
+
+.empty{text-align:center;padding:60px 20px;color:#64748b;font-size:14px}
+.footer{margin-top:30px;padding:18px;text-align:center;font-size:11px;color:#64748b;line-height:1.6}
+.footer a{color:#3b82f6;text-decoration:none}
+
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr}
+  .filters .row{flex-direction:column;align-items:stretch}
+  .filters input[type=text]{min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎯 2027학년도 수시 직접 지원 대시보드</h1>
+  <p>따님(고3·문과) 수시 지원 전략 — 설명회 일정과 별도로 <b>실제 원서를 낼 후보 대학</b>을 관리합니다</p>
+  <p class="meta" style="color:#86efac">✅ 지원권 기준(26.8.16 확정): 수도권 전체 + 인근 국공립 + 사립은 경기남부~천안(아산 조건부) · 논술은 약술형까지만</p>
+  <div class="nav"><a href="index.html">📅 입시설명회 대시보드로 이동 →</a></div>
+</div>
+
+<div class="wrap">
+
+<div class="banner" id="statusBanner">
+  📌 <b>다음 단계:</b> 생기부(교과 성적)와 모의고사 성적표를 텔레그램으로 보내주시면, 아래 후보 대학별로 <b>안정 / 적정 / 소신</b> 합격 가능성을 분석해 이 대시보드에 채워 넣겠습니다. 현재 모든 대학이 <b>성적 대기</b> 상태입니다.
+</div>
+
+<div class="timeline">
+  <h2>🗓 주요 일정 (예상 표시는 대교협·평가원 확정 발표 후 갱신)</h2>
+  <div id="timelineList"></div>
+</div>
+
+<div class="summary" id="summary"></div>
+
+<div class="filters">
+  <div class="row">
+    <label>그룹</label>
+    <div id="groupChips"></div>
+  </div>
+  <div class="row">
+    <label>전형</label>
+    <select id="filterType">
+      <option value="">전체</option>
+      <option value="약술논술">약술형 논술</option>
+      <option value="교과">학생부 교과</option>
+      <option value="종합">학생부 종합</option>
+    </select>
+    <label>지원권</label>
+    <select id="filterScope">
+      <option value="">전체</option>
+      <option value="적합">✅ 적합</option>
+      <option value="조건부">🟡 조건부</option>
+    </select>
+    <label>가능성</label>
+    <select id="filterChance">
+      <option value="">전체</option>
+      <option value="안정">🟢 안정</option>
+      <option value="적정">🔵 적정</option>
+      <option value="소신">🟠 소신</option>
+      <option value="wait">⏳ 성적 대기</option>
+    </select>
+    <label>검색</label>
+    <input type="text" id="filterSearch" placeholder="대학명, 지역, 키워드...">
+    <button class="btn" id="resetBtn">초기화</button>
+    <button class="btn" id="exportCsv">CSV</button>
+  </div>
+</div>
+
+<div class="cards" id="cards"></div>
+<div class="empty" id="emptyMsg" style="display:none">조건에 맞는 대학이 없습니다.</div>
+
+<div class="footer">
+  약술형 논술 실시 대학은 2026학년도 기준이며, 2027학년도 실시 여부·전형명·모집단위는 각 대학 수시 모집요강에서 최종 확인해야 합니다.<br>
+  성적 분석 후 후보를 압축하고, 대학별 전형·수능최저·논술 일정을 개별 카드에 채워 넣을 예정입니다. |
+  <a href="https://www.adiga.kr/" target="_blank">대입정보포털 어디가</a>
+</div>
+
+</div>
+
+<script src="apply_data.js"></script>
+<script>
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+let UNIVS = [], GROUP_FILTER = '';
+const GROUP_LABELS = {"약술논술":"📝 약술논술 대학","인서울":"🏙 인서울","경기·인천":"🏫 경기·인천","인근 국공립":"🏛 인근 국공립","천안권 사립":"🚄 경기남부~천안 사립"};
+
+function parseDate(s){
+  if(!s) return null;
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? new Date(+m[1], +m[2]-1, +m[3]) : null;
+}
+function ddayOf(s){
+  const dt = parseDate(s);
+  return dt ? Math.round((dt.getTime()-TODAY.getTime())/86400000) : null;
+}
+function fmtDDay(d){
+  if(d===null) return 'TBD';
+  if(d===0) return 'D-DAY';
+  if(d<0) return '종료';
+  return 'D-'+d;
+}
+
+function renderTimeline(){
+  const el = document.getElementById('timelineList');
+  el.innerHTML = APPLY_DATA.timeline.map(t => {
+    const d = ddayOf(t.date);
+    const cls = d===null ? 'tbd' : (d<=30 ? 'urgent' : '');
+    const dateTxt = t.date ? t.date + (t.date_end ? ' ~ '+t.date_end : '') : (t.date_note||'');
+    return `<div class="tl-item">
+      <span class="dday ${cls}">${fmtDDay(d)}</span>
+      <span class="nm">${t.name}</span>
+      <span class="dt">${dateTxt}</span>
+      ${t.estimated ? '<span class="est">예상</span>' : ''}
+      ${t.note ? `<span class="dt">· ${t.note}</span>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function renderSummary(){
+  const all = UNIVS;
+  const stats = {
+    total: all.length,
+    essay: all.filter(u => u.essay).length,
+    inscope: all.filter(u => u.scope==='적합').length,
+    cond: all.filter(u => u.scope==='조건부').length,
+    wait: all.filter(u => !u.chance).length,
+  };
+  const dApply = ddayOf(APPLY_DATA.timeline.find(t => t.name.includes('원서접수'))?.date);
+  document.getElementById('summary').innerHTML = `
+    <div class="sc"><div class="n">${stats.total}</div><div class="l">후보 대학</div></div>
+    <div class="sc essay"><div class="n">${stats.essay}</div><div class="l">📝 약술논술</div></div>
+    <div class="sc essay"><div class="n">${stats.inscope}</div><div class="l">✅ 적합</div></div>
+    <div class="sc cond"><div class="n">${stats.cond}</div><div class="l">🟡 조건부</div></div>
+    <div class="sc wait"><div class="n">${stats.wait}</div><div class="l">⏳ 성적 대기</div></div>
+    <div class="sc dday"><div class="n">${fmtDDay(dApply)}</div><div class="l">수시 원서접수(예상)</div></div>
+  `;
+}
+
+function renderGroupChips(){
+  const groups = [...new Set(UNIVS.map(u => u.group))];
+  const el = document.getElementById('groupChips');
+  el.innerHTML = '<span class="chip active" data-g="">전체</span>' +
+    groups.map(g => `<span class="chip" data-g="${g}">${GROUP_LABELS[g]||g}</span>`).join('');
+  el.querySelectorAll('.chip').forEach(c => {
+    c.addEventListener('click', () => {
+      el.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+      GROUP_FILTER = c.dataset.g;
+      render();
+    });
+  });
+}
+
+function getFiltered(){
+  const f = {
+    type: document.getElementById('filterType').value,
+    scope: document.getElementById('filterScope').value,
+    chance: document.getElementById('filterChance').value,
+    search: document.getElementById('filterSearch').value.toLowerCase().trim(),
+  };
+  return UNIVS.filter(u => {
+    if(GROUP_FILTER && u.group !== GROUP_FILTER) return false;
+    if(f.type && !u.types.includes(f.type)) return false;
+    if(f.scope && u.scope !== f.scope) return false;
+    if(f.chance === 'wait'){ if(u.chance) return false; }
+    else if(f.chance && u.chance !== f.chance) return false;
+    if(f.search){
+      const blob = (u.name+' '+(u.campus||'')+' '+u.region+' '+u.group+' '+(u.notes||'')).toLowerCase();
+      if(!blob.includes(f.search)) return false;
+    }
+    return true;
+  }).sort((a,b) => {
+    const pri = {high:0, medium:1, low:2};
+    if(pri[a.priority] !== pri[b.priority]) return pri[a.priority]-pri[b.priority];
+    return a.name.localeCompare(b.name,'ko');
+  });
+}
+
+function renderCard(u){
+  const chanceCls = u.chance==='안정'?'safe':u.chance==='적정'?'fit':u.chance==='소신'?'reach':'';
+  const chanceTxt = u.chance || '⏳ 성적 대기';
+  const cardCls = u.scope==='조건부' ? 'cond' : (u.essay ? 'essay' : '');
+  const tags = [
+    `<span class="tag tag-group">${GROUP_LABELS[u.group]||u.group}</span>`,
+    u.scope==='적합' ? '<span class="tag tag-scope-in">✅ 지원권</span>' : '<span class="tag tag-scope-cond">🟡 조건부</span>',
+    ...u.types.map(t => t==='약술논술' ? '<span class="tag tag-essay">📝 약술형 논술</span>' : `<span class="tag tag-type">${t==='교과'?'학생부교과':'학생부종합'}</span>`),
+    u.priority==='high' ? '<span class="tag tag-pri-high">우선 검토</span>' : '',
+  ].filter(Boolean).join('');
+  const q = encodeURIComponent(u.name+' 입학처 수시');
+  return `
+    <div class="card ${cardCls}">
+      <span class="chance ${chanceCls}">${chanceTxt}</span>
+      <div class="region">📍 ${u.region}</div>
+      <div class="univ-name">${u.name} <span class="campus">${u.campus||''}</span></div>
+      <div class="tags">${tags}</div>
+      ${u.notes ? `<div class="notes">💡 ${u.notes}</div>` : ''}
+      <div class="links"><a href="https://search.naver.com/search.naver?query=${q}" target="_blank">🔍 입학처 검색</a></div>
+    </div>
+  `;
+}
+
+function render(){
+  const list = getFiltered();
+  document.getElementById('cards').innerHTML = list.map(renderCard).join('');
+  document.getElementById('emptyMsg').style.display = list.length ? 'none' : '';
+}
+
+function exportCsv(){
+  const list = getFiltered();
+  const header = ['대학','캠퍼스','지역','그룹','지원권','전형','약술논술','가능성','우선도','비고'];
+  const rows = list.map(u => [u.name, u.campus||'', u.region, u.group, u.scope, u.types.join('·'), u.essay?'O':'', u.chance||'성적대기', u.priority, u.notes||'']);
+  const csv = '﻿' + [header, ...rows].map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `수시지원_2027_${new Date().toISOString().split('T')[0]}.csv`;
+  a.click();
+}
+
+['filterType','filterScope','filterChance','filterSearch'].forEach(id => {
+  document.getElementById(id).addEventListener('input', render);
+  document.getElementById(id).addEventListener('change', render);
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  ['filterType','filterScope','filterChance','filterSearch'].forEach(id => document.getElementById(id).value = '');
+  GROUP_FILTER = '';
+  document.querySelectorAll('#groupChips .chip').forEach((c,i) => c.classList.toggle('active', i===0));
+  render();
+});
+document.getElementById('exportCsv').addEventListener('click', exportCsv);
+
+UNIVS = APPLY_DATA.universities;
+renderTimeline();
+renderSummary();
+renderGroupChips();
+render();
+</script>
+</body>
+</html>
